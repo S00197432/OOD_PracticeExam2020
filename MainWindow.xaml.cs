@@ -17,6 +17,7 @@ namespace OOD_PracticeExam2020
 {
     public partial class MainWindow : Window
     {
+        
         public MainWindow()
         {
             InitializeComponent();
