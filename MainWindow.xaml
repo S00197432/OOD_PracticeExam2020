@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="298" Margin="123,78,0,0" Stroke="Black" VerticalAlignment="Top" Width="550"/>
+        <ListBox HorizontalAlignment="Left" Height="268" Margin="137,92,0,0" VerticalAlignment="Top" Width="218"/>
+        <Image HorizontalAlignment="Left" Height="226" Margin="463,134,0,0" VerticalAlignment="Top" Width="197"/>
+        <TextBlock HorizontalAlignment="Left" Margin="463,92,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="197" Height="37"/>
     </Grid>
 </Window>
