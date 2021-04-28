@@ -5,11 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OOD_PracticeExam2020"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+
+    <Window.Resources>
+        <DataTemplate x:Key="listboxTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="{Binding OSImage}" Height="30" Margin="10"/>
+                <TextBlock Text="{Binding Name}" />
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+    
     <Grid>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="298" Margin="123,78,0,0" Stroke="Black" VerticalAlignment="Top" Width="550"/>
-        <ListBox HorizontalAlignment="Left" Height="268" Margin="137,92,0,0" VerticalAlignment="Top" Width="218"/>
-        <Image HorizontalAlignment="Left" Height="226" Margin="463,134,0,0" VerticalAlignment="Top" Width="197"/>
-        <TextBlock HorizontalAlignment="Left" Margin="463,92,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="197" Height="37"/>
+        <ListBox ItemTemplate="{StaticResource ResourceKey=listboxTemplate}"  x:Name="LBX_PhoneList" HorizontalAlignment="Left" Height="268" Margin="137,92,0,0" VerticalAlignment="Top" Width="218" SelectionChanged="LBX_PhoneList_SelectionChanged"/>
+        <Image x:Name="IMG_PhoneImage" HorizontalAlignment="Left" Height="226" Margin="463,134,0,0" VerticalAlignment="Top" Width="197"/>
+        <TextBlock x:Name="TXT_PhonePrice" HorizontalAlignment="Left" Margin="463,92,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="197" Height="37"/>
     </Grid>
 </Window>

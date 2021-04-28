@@ -17,10 +17,36 @@ namespace OOD_PracticeExam2020
 {
     public partial class MainWindow : Window
     {
-        
+        PhoneData db = new PhoneData();
         public MainWindow()
         {
+            
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            var query = from c in db.Phones
+                        select c;
+
+            LBX_PhoneList.ItemsSource = query.ToList();
+
+        }
+
+        private void LBX_PhoneList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Phone selectedPhone = LBX_PhoneList.SelectedItem as Phone;
+            
+
+            if (selectedPhone != null)
+            {
+                TXT_PhonePrice.Text = selectedPhone.Price.ToString();
+                IMG_PhoneImage.Source = new BitmapImage(new Uri(selectedPhone.PhoneImage, UriKind.Relative));
+            }
+
+                        
+            
+            
         }
     }
 }

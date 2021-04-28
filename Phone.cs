@@ -18,11 +18,18 @@ namespace OOD_PracticeExam2020
         public string PhoneImage { get; set; }
         public double Price { get; set; }
 
-        public void IncreasedPrice(double PriceUp = 0.2)
+        public void IncreasedPrice(double PriceUp)
         {
-
+            PriceUp = Price * 0.2;
+            
         }
-       
+
+        public override string ToString()
+        {
+            return Name;
+        }
+
+
     }
     public class PhoneData : DbContext
     {
